@@ -1,0 +1,83 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table genres {
+  id varchar [primary key]
+  name integer
+  name_encoded varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table authors {
+  id varchar [primary key]
+  name varchar
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table books {
+  id varchar [primary key]
+  title varchar
+  description text
+  image_url varchar
+  rating float
+  total_votes int
+  first_published int
+  total_copies int
+  available_copies int
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table books_genres {
+  id varchar [primary key]
+  book_id varchar
+  username varchar
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table users {
+  id varchar [primary key]
+  username varchar
+  email varchar
+  password_hash varchar
+  avatar binary
+  avatar_url varchar
+  loaned_books_count int
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table statuses {
+  id varchar [primary key]
+  book_id varchar
+  username varchar
+  status varchar
+
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table reviews {
+  id varchar [primary key]
+  book_id varchar
+  username varchar
+  rating float
+  content text
+  
+  created_at timestamp
+  updated_at timestamp
+}
+
+Ref: books.id > books_genres.book_id
+Ref: users.username > books_genres.username
+Ref: books.id > statuses.book_id
+Ref: users.username > statuses.username
+Ref: books.id > reviews.book_id
+Ref: users.username > reviews.username

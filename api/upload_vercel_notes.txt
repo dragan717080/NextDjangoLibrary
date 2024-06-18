@@ -1,0 +1,14 @@
+If having this error:
+Error: pg_config executable not found.
+
+      pg_config is required to build psycopg2 from source.  Please add the directory
+      option:
+
+          python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+      or with the pg_config option in 'setup.cfg'.
+      'psycopg2-binary' package instead.
+
+Install 'psycopg2-binary' rather than 'psycopg2'
+
+delete all types where need to give type union e.g. 'str|float'
