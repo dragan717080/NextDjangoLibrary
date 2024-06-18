@@ -1,0 +1,4 @@
+{
+  "extends": ["github>dragan717080/renovate-config"],
+  "baseBranches": ["master", "src-dir"]
+}

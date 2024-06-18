@@ -1,0 +1,10 @@
+.top-book-card {
+    height: 185px;
+    width: 194px;
+    margin: auto;
+}
+
+.top-book-card img {
+    height: 185px;
+    box-shadow: grey 5px 5px 3px;
+}
